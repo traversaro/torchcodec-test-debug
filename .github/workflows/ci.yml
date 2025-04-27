@@ -10,13 +10,14 @@ on:
 
 jobs:
   build-with-pixi:
-    name: '[pixi:${{ matrix.os }}]'
+    name: '[pixi:${{ matrix.pixi_task }}:${{ matrix.os }}]'
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         build_type: [Release]
         os: [ubuntu-22.04, ubuntu-24.04-arm]
+        pixi_task: [test_cxx, test_py]
 
     steps:
     - uses: actions/checkout@v4
@@ -28,10 +29,7 @@ jobs:
 
     - uses: prefix-dev/setup-pixi@v0.8.6
 
-    - name: Run C++ tests
+    - name: Run the task ${{ matrix.pixi_task }}
       shell: bash -l {0}
-      run: pixi run test_cxx
+      run: pixi run ${{ matrix.pixi_task }}
 
-    - name: Run the Python tests
-      shell: bash -l {0}
-      run: pixi run test_py
