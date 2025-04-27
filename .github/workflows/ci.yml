@@ -17,7 +17,16 @@ jobs:
       matrix:
         build_type: [Release]
         os: [ubuntu-22.04, ubuntu-24.04-arm, macos-13, macos-14]
-        pixi_task: [test_cxx, test_py]
+        pixi_task: [test_cxx, test_py, test_cxx_with_pypi]
+        exclude:
+          - os: macos-13
+            pixi_task: test_cxx
+          - os: macos-14
+            pixi_task: test_cxx
+          - os: macos-13
+            pixi_task: test_cxx_with_pypi
+          - os: macos-14
+            pixi_task: test_cxx_with_pypi
 
     steps:
     - uses: actions/checkout@v4
