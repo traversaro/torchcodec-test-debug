@@ -1,0 +1,30 @@
+[project]
+authors = ["Silvio <silvio.traversaro@iit.it>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "torchcodec-test-debug"
+platforms = ["linux-64", "linux-aarch64"]
+version = "0.1.0"
+
+[tasks]
+download_src_03 = {cmd = "echo Download torchcodec src && mkdir -p ./.pixi_ws && git clone https://github.com/traversaro/torchcodec --branch 03removewerror ./.pixi_ws/torchcodec", outputs=[".pixi_ws/torchcodec/README.md"]}
+download_src_02 = {cmd = "echo Download torchcodec src && mkdir -p ./.pixi_ws && git clone https://github.com/traversaro/torchcodec --branch release/0.2.1 ./.pixi_ws/torchcodec02", outputs=[".pixi_ws/torchcodec02/README.md"]}
+test_cxx = {cmd = "echo Run torchcodec C++ tests && cmake -DCMAKE_BUILD_TYPE=Release  -DBUILD_TESTS=1 -GNinja -B ./.pixi_ws/torchcodec/build -S  ./.pixi_ws/torchcodec && cmake --build ./.pixi_ws/torchcodec/build && ctest --test-dir ./.pixi_ws/torchcodec/build --build-config Release", depends-on = ["download_src_03"]}
+test_py = {cmd = "echo Run torchcodec python tests && pytest", cwd = "./.pixi_ws/torchcodec02/test", depends-on = ["download_src_02"]}
+# If there is any problem, run uninstall_src_deps to uninstall the source dependencies
+cleanup_src_deps = {cmd = "echo Uninstall src deps && rm -rf ./.pixi_ws/"}
+
+[dependencies]
+python = "*"
+pip = "*"
+libtorch = "*"
+pytorch = "*"
+ffmpeg = "*"
+cxx-compiler = "*"
+make = "*"
+ninja = "*"
+pkg-config = "*"
+pytest = "*"
+torchcodec = "0.2.*"
+torchvision = "*"
+
