@@ -212,7 +212,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libxrender-0.9.12-hb9d3cd8_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libxscrnsaver-1.2.4-hb9d3cd8_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.7-hb8e6e7a_2.conda
-      - pypi: git+https://github.com/traversaro/torchcodec?rev=03removewerror#796a7edbd9a0cc45f3a917fc141cf1f8d73cd519
+      - pypi: git+https://github.com/traversaro/torchcodec?rev=b2a03deffe20b3a779195c1baaf830acea05d6f3#b2a03deffe20b3a779195c1baaf830acea05d6f3
       osx-64:
       - conda: https://conda.anaconda.org/conda-forge/osx-64/aom-3.9.1-hf036a51_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/bzip2-1.0.8-hfdf4475_7.conda
@@ -366,7 +366,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-64/x264-1!164.3095-h775f41a_2.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-64/x265-3.5-hbb4e6a2_3.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-64/zstd-1.5.7-h8210216_2.conda
-      - pypi: git+https://github.com/traversaro/torchcodec?rev=03removewerror#796a7edbd9a0cc45f3a917fc141cf1f8d73cd519
+      - pypi: git+https://github.com/traversaro/torchcodec?rev=b2a03deffe20b3a779195c1baaf830acea05d6f3#b2a03deffe20b3a779195c1baaf830acea05d6f3
       osx-arm64:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/aom-3.9.1-h7bae524_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/bzip2-1.0.8-h99b78c6_7.conda
@@ -523,7 +523,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/x264-1!164.3095-h57fd34a_2.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/x265-3.5-hbc6ce65_3.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstd-1.5.7-h6491c7d_2.conda
-      - pypi: git+https://github.com/traversaro/torchcodec?rev=03removewerror#796a7edbd9a0cc45f3a917fc141cf1f8d73cd519
+      - pypi: git+https://github.com/traversaro/torchcodec?rev=b2a03deffe20b3a779195c1baaf830acea05d6f3#b2a03deffe20b3a779195c1baaf830acea05d6f3
   allpipffmpeg71:
     channels:
     - url: https://conda.anaconda.org/conda-forge/
@@ -736,7 +736,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libxrender-0.9.12-hb9d3cd8_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libxscrnsaver-1.2.4-hb9d3cd8_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.7-hb8e6e7a_2.conda
-      - pypi: git+https://github.com/traversaro/torchcodec?rev=03removewerror#796a7edbd9a0cc45f3a917fc141cf1f8d73cd519
+      - pypi: git+https://github.com/traversaro/torchcodec?rev=b2a03deffe20b3a779195c1baaf830acea05d6f3#b2a03deffe20b3a779195c1baaf830acea05d6f3
       osx-arm64:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/aom-3.9.1-h7bae524_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/bzip2-1.0.8-h99b78c6_7.conda
@@ -893,7 +893,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/x264-1!164.3095-h57fd34a_2.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/x265-3.5-hbc6ce65_3.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstd-1.5.7-h6491c7d_2.conda
-      - pypi: git+https://github.com/traversaro/torchcodec?rev=03removewerror#796a7edbd9a0cc45f3a917fc141cf1f8d73cd519
+      - pypi: git+https://github.com/traversaro/torchcodec?rev=b2a03deffe20b3a779195c1baaf830acea05d6f3#b2a03deffe20b3a779195c1baaf830acea05d6f3
   default:
     channels:
     - url: https://conda.anaconda.org/conda-forge/
@@ -1625,7 +1625,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libxrender-0.9.12-hb9d3cd8_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libxscrnsaver-1.2.4-hb9d3cd8_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.7-hb8e6e7a_2.conda
-      - pypi: git+https://github.com/traversaro/torchcodec?rev=03removewerror#796a7edbd9a0cc45f3a917fc141cf1f8d73cd519
+      - pypi: git+https://github.com/traversaro/torchcodec?rev=b2a03deffe20b3a779195c1baaf830acea05d6f3#b2a03deffe20b3a779195c1baaf830acea05d6f3
       osx-arm64:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/aom-3.9.1-h7bae524_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/bzip2-1.0.8-h99b78c6_7.conda
@@ -1782,7 +1782,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/x264-1!164.3095-h57fd34a_2.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/x265-3.5-hbc6ce65_3.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstd-1.5.7-h6491c7d_2.conda
-      - pypi: git+https://github.com/traversaro/torchcodec?rev=03removewerror#796a7edbd9a0cc45f3a917fc141cf1f8d73cd519
+      - pypi: git+https://github.com/traversaro/torchcodec?rev=b2a03deffe20b3a779195c1baaf830acea05d6f3#b2a03deffe20b3a779195c1baaf830acea05d6f3
 packages:
 - conda: https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-3_kmp_llvm.conda
   build_number: 3
@@ -7342,7 +7342,7 @@ packages:
   - pkg:pypi/tomli?source=hash-mapping
   size: 19167
   timestamp: 1733256819729
-- pypi: git+https://github.com/traversaro/torchcodec?rev=03removewerror#796a7edbd9a0cc45f3a917fc141cf1f8d73cd519
+- pypi: git+https://github.com/traversaro/torchcodec?rev=b2a03deffe20b3a779195c1baaf830acea05d6f3#b2a03deffe20b3a779195c1baaf830acea05d6f3
   name: torchcodec
   version: 0.3.0
   requires_dist:
