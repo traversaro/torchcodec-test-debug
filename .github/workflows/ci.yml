@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-with-pixi:
-    name: '[pixi:${{ matrix.pixi_task }}:${{ matrix.os }}]'
+    name: '[pixi:${{ matrix.pixi_task }}:${{ matrix.pixi_env }}:${{ matrix.os }}]'
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
