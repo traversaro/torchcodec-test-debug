@@ -12,6 +12,10 @@ test_py = {cmd = "echo Run torchcodec python tests && pytest", cwd = "./.pixi_ws
 # If there is any problem, run uninstall_src_deps to uninstall the source dependencies
 cleanup_src_deps = {cmd = "echo Uninstall src deps && rm -rf ./.pixi_ws/"}
 
+[activation]
+# Needed to build torchcodec wheels
+env = { I_CONFIRM_THIS_IS_NOT_A_LICENSE_VIOLATION = "1" }
+
 [dependencies]
 python = "3.12.*"
 pip = "*"
