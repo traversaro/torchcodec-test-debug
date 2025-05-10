@@ -21,15 +21,20 @@ python = "3.12.*"
 pip = "*"
 numpy = "*"
 pytest = "*"
+# Build dependencies
+cmake = "*"
+make = "*"
+ninja = "*"
+cxx-compiler = "*"
+pybind11 = "*"
+pkg-config = "*"
+
 
 [pypi-options]
 no-build-isolation = ["torchcodec"]
 
 [feature.ffmpeg71.dependencies]
 ffmpeg = "7.1.*"
-
-[feature.ffmpeg70.dependencies]
-ffmpeg = "7.0.*"
 
 [feature.torchconda.dependencies]
 pytorch = "2.7.*"
@@ -45,15 +50,6 @@ platforms = ["linux-64", "osx-arm64"]
 
 [feature.torchcodecpip.pypi-dependencies]
 torchcodec = "==0.3.*"
-
-[feature.torchcodecconda.dependencies]
-# Build dependencies
-cmake = "*"
-make = "*"
-ninja = "*"
-cxx-compiler = "*"
-pybind11 = "*"
-pkg-config = "*"
 
 [feature.torchcodecconda.pypi-dependencies]
 # this is just v0.3.0 with https://github.com/pytorch/torchcodec/pull/656
