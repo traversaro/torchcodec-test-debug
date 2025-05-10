@@ -15,10 +15,26 @@ cleanup_src_deps = {cmd = "echo Uninstall src deps && rm -rf ./.pixi_ws/"}
 [dependencies]
 python = "3.12.*"
 pip = "*"
-ffmpeg = "*"
 numpy = "*"
 pytest = "*"
 
-[pypi-dependencies]
+[feature.ffmpeg71.dependencies]
+ffmpeg = "7.1.*"
+
+[feature.ffmpeg70.dependencies]
+ffmpeg = "7.0.*"
+
+[feature.conda.dependencies]
+pytorch = "2.7.*"
+
+[feature.pip.pypi-dependencies]
 torch = "==2.7.*"
+
+[pypi-dependencies]
 torchcodec = "==0.3.*"
+
+[environments]
+default = {features = ["conda","ffmpeg71"], solve-group = "ffmpeg71"}
+condaffmpeg71 = {features = ["conda","ffmpeg71"], solve-group = "ffmpeg71"}
+pipffmpeg71 = {features = ["pip","ffmpeg71"], solve-group = "ffmpeg71"}
+pipffmpeg70 = {features = ["pip","ffmpeg70"], solve-group = "ffmpeg70"}
