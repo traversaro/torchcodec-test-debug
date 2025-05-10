@@ -23,6 +23,7 @@ jobs:
           # pytorch and torchcodec wheels are not available on osx-64
           - os: macos-13
             pixi_env: allcondaffmpeg71
+            pixi_task: test_py
 
     steps:
     - uses: actions/checkout@v4
