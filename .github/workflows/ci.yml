@@ -16,9 +16,15 @@ jobs:
       fail-fast: false
       matrix:
         build_type: [Release]
-        os: [ubuntu-22.04, macos-14]
+        os: [ubuntu-22.04, macos-14, macos-13]
         pixi_task: [test_py]
         pixi_env: [condaffmpeg71, pipffmpeg71, pipffmpeg70]
+        exclude:
+          # pip's pytorch 2.7.0 is not available in osx-64
+          - os: macos-13
+            pixi_env: pipffmpeg71
+          - os: macos-13
+            pixi_env: pipffmpeg70
 
     steps:
     - uses: actions/checkout@v4
