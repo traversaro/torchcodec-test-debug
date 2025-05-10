@@ -3,40 +3,22 @@ authors = ["Silvio <silvio.traversaro@iit.it>"]
 channels = ["conda-forge"]
 description = "Add a short description here"
 name = "torchcodec-test-debug"
-platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64"]
+platforms = ["linux-64",  "osx-arm64"]
 version = "0.1.0"
 
-[feature.conda.tasks]
-download_src_03 = {cmd = "echo Download torchcodec src && mkdir -p ./.pixi_ws && git clone https://github.com/traversaro/torchcodec --branch 03removewerror ./.pixi_ws/torchcodec", outputs=[".pixi_ws/torchcodec/README.md"]}
-download_src_02 = {cmd = "echo Download torchcodec src && mkdir -p ./.pixi_ws && git clone https://github.com/traversaro/torchcodec --branch release/0.2.1 ./.pixi_ws/torchcodec02", outputs=[".pixi_ws/torchcodec02/README.md"]}
-test_cxx = {cmd = "echo Run torchcodec C++ tests && cmake -DCMAKE_BUILD_TYPE=Debug  -DBUILD_TESTS=1 -GNinja -B ./.pixi_ws/torchcodec/build -S  ./.pixi_ws/torchcodec && cmake --build ./.pixi_ws/torchcodec/build && ctest  --rerun-failed --output-on-failure --test-dir ./.pixi_ws/torchcodec/build --build-config Release", depends-on = ["download_src_03"]}
-test_py = {cmd = "echo Run torchcodec python tests && pytest", cwd = "./.pixi_ws/torchcodec02/test", depends-on = ["download_src_02"]}
+[tasks]
+download_src_03 = {cmd = "echo Download torchcodec src && mkdir -p ./.pixi_ws && git clone https://github.com/pytorch/torchcodec --branch v0.3.0 ./.pixi_ws/torchcodec", outputs=[".pixi_ws/torchcodec/README.md"]}
+test_py = {cmd = "echo Run torchcodec python tests && pytest", cwd = "./.pixi_ws/torchcodec/test", depends-on = ["download_src_03"]}
 # If there is any problem, run uninstall_src_deps to uninstall the source dependencies
 cleanup_src_deps = {cmd = "echo Uninstall src deps && rm -rf ./.pixi_ws/"}
 
-[feature.pypi.tasks]
-test_cxx_with_pypi = {cmd = "echo Run torchcodec C++ tests with pytorch installed via PyPI && cmake -DCMAKE_BUILD_TYPE=Debug  -DBUILD_TESTS=1 -DCMAKE_PREFIX_PATH=$(python3 -c 'import torch;print(torch.utils.cmake_prefix_path)') -GNinja -B ./.pixi_ws/torchcodec/buildpypi -S  ./.pixi_ws/torchcodec && cmake --build ./.pixi_ws/torchcodec/buildpypi && ctest  --rerun-failed --output-on-failure --test-dir ./.pixi_ws/torchcodec/buildpypi --build-config Release", depends-on = ["download_src_03"]}
-
 [dependencies]
-python = "*"
+python = "3.12.*"
 pip = "*"
-pybind11 = "*"
 ffmpeg = "*"
-cxx-compiler = "*"
-make = "*"
-ninja = "*"
-pkg-config = "*"
+numpy = "*"
 pytest = "*"
 
-[feature.conda.dependencies]
-libtorch = "*"
-pytorch = "*"
-torchcodec = "0.2.*"
-torchvision = "*"
-
-[feature.pypi.pypi-dependencies]
-torch = "*"
-
-[environments]
-default = {features = ["conda"], solve-group = "sg"}
-cxxpypi = {features = ["pypi"], solve-group = "sg"}
+[pypi-dependencies]
+torch = "==2.7.*"
+torchcodec = "==0.3.*"
