@@ -16,15 +16,13 @@ jobs:
       fail-fast: false
       matrix:
         build_type: [Release]
-        os: [ubuntu-22.04, macos-14, macos-13]
+        os: [ubuntu-22.04, macos-14]
         pixi_task: [test_py]
-        pixi_env: [condaffmpeg71, pipffmpeg71, pipffmpeg70]
-        exclude:
-          # pip's pytorch 2.7.0 is not available in osx-64
+        pixi_env: [torchcondatorchcodecpipffmpeg71, allpipffmpeg71, allcondaffmpeg71]
+        include:
+          # pytorch and torchcodec wheels are not available on osx-64
           - os: macos-13
-            pixi_env: pipffmpeg71
-          - os: macos-13
-            pixi_env: pipffmpeg70
+            pixi_env: allcondaffmpeg71
 
     steps:
     - uses: actions/checkout@v4

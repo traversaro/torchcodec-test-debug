@@ -3,7 +3,7 @@ authors = ["Silvio <silvio.traversaro@iit.it>"]
 channels = ["conda-forge"]
 description = "Add a short description here"
 name = "torchcodec-test-debug"
-platforms = ["linux-64",  "osx-arm64"]
+platforms = ["linux-64",  "osx-arm64", "osx-64"]
 version = "0.1.0"
 
 [tasks]
@@ -18,26 +18,45 @@ pip = "*"
 numpy = "*"
 pytest = "*"
 
+[pypi-options]
+no-build-isolation = ["torchcodec"]
+
 [feature.ffmpeg71.dependencies]
 ffmpeg = "7.1.*"
 
 [feature.ffmpeg70.dependencies]
 ffmpeg = "7.0.*"
 
-[feature.conda.dependencies]
+[feature.torchconda.dependencies]
 pytorch = "2.7.*"
 
-[feature.conda]
-platforms = ["linux-64", "osx-64", "osx-arm64"]
+[feature.torchpip]
+platforms = ["linux-64", "osx-arm64"]
 
-[feature.pip.pypi-dependencies]
+[feature.torchpip.pypi-dependencies]
 torch = "==2.7.*"
 
-[pypi-dependencies]
+[feature.torchcodecpip]
+platforms = ["linux-64", "osx-arm64"]
+
+[feature.torchcodecpip.pypi-dependencies]
 torchcodec = "==0.3.*"
 
+[feature.torchcodecconda.dependencies]
+# Build dependencies
+cmake = "*"
+make = "*"
+ninja = "*"
+cxx-compiler = "*"
+pybind11 = "*"
+pkg-config = "*"
+
+[feature.torchcodecconda.pypi-dependencies]
+# this is just v0.3.0 with https://github.com/pytorch/torchcodec/pull/656
+torchcodec = { git = "https://github.com/traversaro/torchcodec.git", rev = "03removewerror" }
+
 [environments]
-default = {features = ["conda","ffmpeg71"], solve-group = "ffmpeg71"}
-condaffmpeg71 = {features = ["conda","ffmpeg71"], solve-group = "ffmpeg71"}
-pipffmpeg71 = {features = ["pip","ffmpeg71"], solve-group = "ffmpeg71"}
-pipffmpeg70 = {features = ["pip","ffmpeg70"], solve-group = "ffmpeg70"}
+default = {features = ["torchconda","ffmpeg71"], solve-group = "ffmpeg71"}
+torchcondatorchcodecpipffmpeg71 = {features = ["torchconda","torchcodecpip","ffmpeg71"], solve-group = "ffmpeg71"}
+allpipffmpeg71 = {features = ["torchpip","torchcodecpip","ffmpeg71"], solve-group = "ffmpeg71"}
+allcondaffmpeg71 = {features = ["torchconda","torchcodecconda","ffmpeg71"], solve-group = "ffmpeg71"}
